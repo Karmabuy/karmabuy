@@ -19,5 +19,14 @@ module Karmabuy
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+      config.paperclip_defaults = {
+         :storage => :s3,
+          :bucket  => ENV['AWS_BUCKET'],
+        s3_credentials: {
+            
+            :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+            :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+        }
+    }
   end
 end
