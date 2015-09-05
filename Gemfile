@@ -41,3 +41,4 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'simple_form'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
+gem 'cancan'
