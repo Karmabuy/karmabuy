@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,8 +43,18 @@ gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 gem 'cancan'
 gem 'paperclip'
-gem 'dotenv-rails', group: :development
 gem 'aws-sdk', '< 2.0'
 gem 'friendly_id'
 gem 'stripe'
 gem 'aasm'
+
+group :development do
+    gem 'sqlite3'
+    gem 'dotenv-rails'
+end
+
+group :production do
+    gem 'rails_12factor'
+    gem 'pg'
+end
+    
