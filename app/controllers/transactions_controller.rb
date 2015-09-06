@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
             @error = e
             redirect_to product_path(product), notice: @error
     end
-
+end
     def pickup
         @sale = Sale.find_by!(guid: params[:guid])
         @product = @sale.product
