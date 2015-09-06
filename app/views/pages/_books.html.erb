@@ -1,0 +1,21 @@
+<table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Available</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @products.each do |product| %>        
+          <tr>
+          <th scope="row"><%= product.id %></th>
+          <td> <%= link_to product.name, product_path(product) %></td>
+          <td><%= product.availability %></td>
+          <td><%= link_to "Edit", edit_product_path(product) %></td>
+        </tr>
+        <% end %>
+         
+      </tbody>
+    </table>
